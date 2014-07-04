@@ -13,14 +13,8 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-sel
 RUN apt-get install -qy oracle-java7-installer
 
 # Install ElasticSearch
-RUN wget -O - http://packages.elasticsearch.org/GPG-KEY-elasticsearch | apt-key add -
-RUN echo "deb http://packages.elasticsearch.org/elasticsearch/1.2/debian stable main" > /etc/apt/sources.list
-RUN apt-get update
-RUN apt-get install -qy elasticsearch
+RUN cd /tmp && curl -qL https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.2.1.tar.gz | tar xzf - && mv /tmp/elasticsearch-1.2.1 /elasticsearch
 RUN mkdir -p /es-config
-
-# DEBUG
-RUN which elasticsearch
 
 # Set up run script
 ADD run.sh /run.sh
