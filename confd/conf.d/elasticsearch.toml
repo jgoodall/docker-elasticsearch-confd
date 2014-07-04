@@ -1,0 +1,7 @@
+[template]
+src = "elasticsearch.tmpl"
+dest = "/es-config/elasticsearch.yaml"
+keys = [
+  "/services/elasticsearch",
+]
+reload_cmd = "/usr/bin/supervisorctl elasticsearch restart"
