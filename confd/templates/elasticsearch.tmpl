@@ -325,7 +325,7 @@ discovery.zen.ping.multicast.enabled: false
 #
 discovery.zen.ping.unicast.hosts: 
 {{ range $server := .services_elasticsearch }}  - {{$server.Value}}
-  {{ end }}
+{{ end }}
 
 # EC2 discovery allows to use AWS EC2 API in order to perform discovery.
 #
