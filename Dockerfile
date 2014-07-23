@@ -13,7 +13,7 @@ RUN echo debconf shared/accepted-oracle-license-v1-1 seen true | debconf-set-sel
 RUN apt-get install -qy oracle-java7-installer
 
 # Install ElasticSearch
-RUN cd /tmp && curl -qL https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.2.1.tar.gz | tar xzf - && mv /tmp/elasticsearch-1.2.1 /elasticsearch
+RUN cd /tmp && curl -qL https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-1.3.0.tar.gz | tar xzf - && mv /tmp/elasticsearch-1.3.0 /elasticsearch
 RUN mkdir -p /es-config
 
 # Set up run script
